@@ -1,0 +1,7 @@
+gcloud compute instances list
+gcloud compute instance-templates list
+
+instance-template-v1
+
+gcloud compute instances create dummy-gcloud-instance
+gcloud compute instances create v1-instance-from-gcloud-instance-template-v1 --source-instance-template instance-template-v1
