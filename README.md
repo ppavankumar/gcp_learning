@@ -23,10 +23,10 @@ gcloud compute instance-groups managed create my-mig set-autoscaling my-mig --ma
 *** CODES ***
 
 #!/bin/bash
-sudo su
-apt update
-apt install apache2 -y
-service apache2 start
+sudo su\
+apt update\
+apt install apache2 -y\
+service apache2 start\
 
 v1
 
