@@ -1,3 +1,36 @@
+gcloud config list
+gcloud config configurations list
+gcloud projects list
+
+gcloud compute instances list
+gcloud compute instance-templates list
+# gcloud compute instance-groups list-instances
+# gcloud compute instance-groups managed instance-configs list
+# gcloud alloydb instances list
+# gcloud app instances list
+# gcloud bigtable instances list
+# gcloud bms instances list
+# gcloud compute instances list
+# gcloud filestore instances list
+# gcloud looker instances list
+# gcloud memcache instances list
+
+# --template and --size are mandatory for below command
+gcloud compute instance-groups managed create my-mig --template my-instance-template-v1 --size 1
+
+gcloud compute health-checks list
+gcloud compute instance-groups managed describe my-mig
+
+# --max-num-replicas is mandatory for below command
+gcloud compute instance-groups managed set-autoscaling my-mig --max-num-replicas 3 --min-num-replicas 1
+gcloud compute instance-groups managed stop-autoscaling my-mig
+
+gcloud compute instance-groups managed recreate-instances my-mig --instances my-mig-zfj9
+gcloud compute instance-groups managed update-instances my-mig --minimal-action restart --all-instances
+gcloud compute instance-groups managed update-instances my-mig --minimal-action refresh --most-disruptive-allowed-action restart
+
+gcloud compute instance-groups managed delete my-mig
+
 # Instance creation using custom automation script using gcloud
 gcloud compute instances create instance-v1 \
     --project=steady-shard-402507 \
