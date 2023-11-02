@@ -31,6 +31,15 @@ gcloud compute instance-groups managed update-instances my-mig --minimal-action 
 
 gcloud compute instance-groups managed delete my-mig
 
+# Running notes
+gcloud compute instance-groups managed create my-inst-grp --template my-instance-template-v1 --size 1 --zone asia-south1-c
+gcloud compute instance-groups managed set-autoscaling my-inst-grp --zone asia-south1-c --max-num-replicas 5 --min-num-replicas 2
+
+gcloud compute instance-groups managed resize my-inst-grp --zone asia-south1-c --size 3
+
+gcloud compute instance-groups managed delete my-inst-grp --zone asia-south1-c
+
+
 # Instance creation using custom automation script using gcloud
 gcloud compute instances create instance-v1 \
     --project=steady-shard-402507 \
